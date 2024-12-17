@@ -1,0 +1,21 @@
+{
+  "name": "api-for-restaurant",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "Leuzimar Filho",
+  "license": "ISC",
+  "description": "API to manage orders for tables in a restaurant",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.12",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
