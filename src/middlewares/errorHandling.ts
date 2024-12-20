@@ -2,8 +2,8 @@ import { AppError } from "@/utils/AppError";
 import {ZodError} from "zod"
 import { Request, Response, NextFunction } from "express";
 export function errorHandling (error: any, request:Request, response: Response, _:NextFunction){
-    if(error instanceof AppError) {
-        return response.status(error.statusCode).json({message: "Invalid request"})
+    if(error instanceof AppError) { 
+        return response.status(error.statusCode).json({error: error.message})
     }
 
     if (error instanceof ZodError){
