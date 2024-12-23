@@ -14,14 +14,14 @@ class TableSessionController{
             const {table_id} = bodySchema.parse(request.body)
 
             const session = await knex<TableSessionRepository>("table-sessions")
-            .where("table_id", table_id) .orderBy("opened_at", "desc").first();
-
-           
-
+            .where("table_id", table_id).orderBy("opened_at", "desc").first();
+  
             if (session && !session.closed_at) {
                 throw new AppError("This table is already open")
             } 
             
+            await knex<TableSessionRepository>("table-sessions").insert({table_id, opened_at: knex.fn.now()})
+
             return response.json(session)
 
             await knex("table-sessions").insert({
