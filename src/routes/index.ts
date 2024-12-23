@@ -1,10 +1,8 @@
 import { Router } from "express";
-
 import { productsRoutes } from "./productsRoutes";
 import { tablesRoutes } from "./tablesRoutes";
 import { tableSessionsRoutes } from "./tableSessionRoutes";
 import { ordersRoutes } from "./ordersRoutes";
-
 
 const routes = Router()
 
